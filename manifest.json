@@ -1,0 +1,28 @@
+{
+  "manifest_version": 3,
+  "name": "CESI WAYF Auto-fill",
+  "version": "1.0",
+  "description": "Remplit automatiquement le champ de connexion sur wayf.cesi.fr.",
+  "permissions": ["scripting", "storage"],
+  "action": {},
+  "icons": {
+    "32": "favicon.png"
+  },
+  "options_ui": {
+    "page": "options.html"
+  },
+  "background": {
+    "scripts": ["background.js"]
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://wayf.cesi.fr/login?*"],
+      "js": ["content.js"]
+    }
+  ],
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "wayf-auto-fill@viacesi.fr"
+    }
+  }
+}
